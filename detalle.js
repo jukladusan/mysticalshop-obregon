@@ -42,8 +42,13 @@ cargarproducto();
 let contador = 0;
 
 function sumar() {
-    contador = contador + 1;
-    document.getElementById("contarproducto").innerHTML = contador;
+    let nstock = productodetalle.stock
+    if (contador<nstock) {
+        contador = contador + 1;
+        document.getElementById("contarproducto").innerHTML = contador;
+    } else {
+        alert("Stock máximo de producto")
+    }
 }
 
 function restar() {
